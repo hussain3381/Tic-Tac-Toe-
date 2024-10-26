@@ -1,0 +1,54 @@
+*{
+    background-color:#000;
+    color: blue;
+    /* border: 2px solid rgb(255, 0, 0); */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box:active{
+    color: yellowgreen;
+}
+.navbar{
+    text-align:center;
+    text-decoration: double;
+    height: 10vh;
+    
+    padding-top: 2rem;
+}
+.game-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+}
+.game{
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box{
+    width: 33%;
+    height: 33%;
+    font-size: 5rem;
+    color: red;
+
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.resetbtn{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+
+}
