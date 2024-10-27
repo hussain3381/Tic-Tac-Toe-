@@ -52,3 +52,11 @@ footer{
     margin-bottom: 2rem;
 
 }
+.msg-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 3rem
+    
+}

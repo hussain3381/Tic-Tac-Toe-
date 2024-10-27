@@ -1,6 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 let btn = document.querySelector(".resetbtn");
-let arr = [
+let turn ="O";
+let winpatt= [
   [0, 1, 2],
   [0, 3, 6],
   [0, 4, 8],
@@ -10,32 +11,53 @@ let arr = [
   [3, 4, 5],
   [6, 7, 8],
 ];
-let turn ="O";
-function gamelogic() {
-  for (let i = 0; i < arr.length; i++) {
-    const box = arr[i];
-    console.log(boxes[box[0]],boxes[box[1]],boxes[box[2]]);
-    
-  };
+// /funcctions
+
+const winCheker=(box)=>{
+ 
+for (const patt of winpatt) {
+ 
+ let p1 = boxes[patt[0]].innerText;
+ let p2 = boxes[patt[1]].innerText;
+ let p3 = boxes[patt[2]].innerText;
+ if(p1 != "" && p2 != "" && p3 != ""){
+  if(p1 == p2 && p2 == p3){
+    console.log(p1,"winner");
+    for(let box of boxes){
+      box.disabled=true;
+    }
+
+  }
+ }
 }
+}
+
+
 let GameTurn=(box)=>{
   if (turn === "O") {
   box.innerText='O';
   turn ="X";
-  box.disable=true;
+  box.disabled=true;
 }else if (turn==="X") {
   box.innerText='X';
   turn="O";
-  box.disable=true;
+  box.disabled=true;
 };
-
-
+// console.log(box);
 
 }
-btn.addEventListener("click", gamelogic);
+const gameReset=()=>{
+  console.log('work');
+  for (const box of boxes) {
+    box.disabled=false;
+    box.innerText="";
+  }
+}
 
+btn.addEventListener("click",gameReset)
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     GameTurn(box);
+    winCheker(box)
   });
 });
