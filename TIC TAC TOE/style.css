@@ -1,6 +1,6 @@
 *{
     background-color:#000;
-    color: blue;
+    color: rgb(217, 255, 0);
     /* border: 2px solid rgb(255, 0, 0); */
     margin: 0;
     padding: 0;
@@ -22,7 +22,8 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-
+    margin-top: 1rem;
+   
 }
 .game{
     height: 20rem;
@@ -36,7 +37,9 @@
     width: 33%;
     height: 33%;
     font-size: 5rem;
-    color: red;
+    border-radius: 1rem;
+    border: 2px solid blue;
+
 
 }
 footer{
@@ -51,4 +54,26 @@ footer{
     font-size: 3rem;
     margin-bottom: 2rem;
 
+}
+.score,.msg{
+    text-align: center;
+    color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    font-size: 2rem;
+    border: 2px solid blue;
+}
+.O h2{
+    color: red;
+} 
+.X h2{
+    color: #0344f7;
+}
+span{
+    display: flex;
+}
+span p {
+    color: #0344f7;
 }
