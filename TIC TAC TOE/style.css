@@ -22,7 +22,8 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-
+    margin-top: 1rem;
+   
 }
 .game{
     height: 20rem;
@@ -38,6 +39,7 @@
     font-size: 5rem;
     color: red;
 
+
 }
 footer{
     position: fixed;
@@ -52,11 +54,16 @@ footer{
     margin-bottom: 2rem;
 
 }
-.msg-box{
+.score,.msg{
+    text-align: center;
+    color: yellow;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    font-size: 3rem
-    
+    font-size: 2rem;
+    border: 2px solid blue;
+}
+h2{
+    color: red;
 }
