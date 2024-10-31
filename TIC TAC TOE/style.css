@@ -1,6 +1,6 @@
 *{
     background-color:#000;
-    color: blue;
+    color: rgb(217, 255, 0);
     /* border: 2px solid rgb(255, 0, 0); */
     margin: 0;
     padding: 0;
@@ -37,7 +37,8 @@
     width: 33%;
     height: 33%;
     font-size: 5rem;
-    color: red;
+    border-radius: 1rem;
+    border: 2px solid blue;
 
 
 }
@@ -60,10 +61,19 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 4rem;
     font-size: 2rem;
     border: 2px solid blue;
 }
-h2{
+.O h2{
     color: red;
+} 
+.X h2{
+    color: #0344f7;
+}
+span{
+    display: flex;
+}
+span p {
+    color: #0344f7;
 }

@@ -1,6 +1,11 @@
 let boxes = document.querySelectorAll(".box");
 let btn = document.querySelector(".resetbtn");
+let msgWiner = document.querySelector("span");
+let playerO = document.querySelector("#playerO");
+let playerX = document.querySelector("#playerX");
 let turn ="O";
+let O = 0;
+let X = 0;
 let winpatt= [
   [0, 1, 2],
   [0, 3, 6],
@@ -12,7 +17,19 @@ let winpatt= [
   [6, 7, 8],
 ];
 // /funcctions
-
+const updateScore = (p1) => {
+if(p1 === "O"){
+  O++ ;
+  playerO.innerText=` ... ${O} ...`;
+  playerO.style.color ='green';
+  playerX.style.color ='red';
+} else if(p1 === "X") {
+  X++;
+  playerX.innerText=` ... ${X} ...`;
+  playerX.style.color ='green';
+  playerO.style.color ='red';
+}
+}
 const winCheker=(box)=>{
  
 for (const patt of winpatt) {
@@ -23,6 +40,8 @@ for (const patt of winpatt) {
  if(p1 != "" && p2 != "" && p3 != ""){
   if(p1 == p2 && p2 == p3){
     console.log(p1,"winner");
+    updateScore(p1);
+    msgWiner.innerHTML=`Winner is <p> "${p1}"</p>`;
     for(let box of boxes){
       box.disabled=true;
     }
@@ -36,10 +55,15 @@ for (const patt of winpatt) {
 let GameTurn=(box)=>{
   if (turn === "O") {
   box.innerText='O';
+  box.style.color = "red";
+  // box.style.backgroundColor = "yellow";
   turn ="X";
   box.disabled=true;
 }else if (turn==="X") {
   box.innerText='X';
+  box.style.color ="#0344f7"
+  // box.style.backgroundColor = "yellow"
+  turn ="X";
   turn="O";
   box.disabled=true;
 };
@@ -51,10 +75,22 @@ const gameReset=()=>{
   for (const box of boxes) {
     box.disabled=false;
     box.innerText="";
+    box.style.backgroundColor = "";
+    box.style.color ="";
+    // playerO.style.color ='';
+    // playerX.style.color ='';
   }
 }
 
-btn.addEventListener("click",gameReset)
+btn.addEventListener("click",gameReset);
+btn.addEventListener("dblclick",()=>{
+  O = 0;
+  X = 0;
+  playerO.innerText=`${O}`;
+  playerX.innerText=`${X}`;
+  playerO.style.color ='';
+  playerX.style.color ='';
+});
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     GameTurn(box);
