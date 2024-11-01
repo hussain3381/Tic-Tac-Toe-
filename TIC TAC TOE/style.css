@@ -6,8 +6,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.box:active{
-    color: yellowgreen;
+.box:hover{
+    border: 2px solid yellow;
 }
 .navbar{
     text-align:center;
